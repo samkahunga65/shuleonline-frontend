@@ -1,0 +1,76 @@
+.App {
+  text-align: center;
+  background-color: rgb(197, 197, 197);
+}
+.Navbar {
+  height: 4rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: rgb(76, 247, 218);
+  color: #fff;
+  text-decoration: none;
+  h1 {
+    margin-right: 60%;
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: bolder;
+  }
+  ul {
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    p {
+      justify-content: space-around;
+      align-content: center;
+    }
+  }
+}
+.notifications {
+  background-color: #e02d2d;
+  color: white;
+}
+.teacher_home {
+  h1 {
+    margin: 0, auto;
+  }
+
+  .students {
+    margin-top: 5rem;
+    margin-left: 40rem;
+  }
+  .ass {
+    margin-top: -10rem;
+    margin-right: 20rem;
+  }
+}
+.sheet {
+  border: 3px solid rgb(226, 195, 59);
+  .question {
+    margin: 10px 20px;
+    p {
+      margin: 0;
+      text-align: left;
+    }
+    ul {
+      display: flex;
+    }
+    .red {
+      color: red;
+    }
+    .blue {
+      color: blue;
+    }
+    li {
+      list-style: none;
+      flex: 100%;
+      cursor: pointer;
+    }
+  }
+}
+.quiz {
+  h3 {
+    cursor: pointer;
+  }
+}

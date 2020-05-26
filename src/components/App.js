@@ -2,10 +2,11 @@ import React, { Component, Fragment } from "react";
 import "./App.scss";
 import { Provider as AlertProvider } from "react-alert";
 import { Provider } from "react-redux";
+import ReactDom from "react-dom";
 
 import Alerts from "./components/alerts";
 import AlertTemplate from "react-alert-template-basic";
-import store from "./store";
+import store from "../store";
 import Students from "./components/home/studentHome";
 import Form from "./components/form";
 import form_teacher from "./components/formt";
@@ -68,4 +69,4 @@ class App extends Component {
     );
   }
 }
-export default App;
+ReactDom.render(<App />, document.getElementById("app"));
