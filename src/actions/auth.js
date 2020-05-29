@@ -33,7 +33,7 @@ export const loadUser = () => (dispatch, getState) => {
   }
 
   axios
-    .get("http://127.0.0.1:8000/api/auth/user", config)
+    .get("https://intense-savannah-53065.herokuapp.com/api/auth/user", config)
     .then((res) => {
       dispatch({
         type: USER_LOADED,
@@ -59,7 +59,10 @@ export const checkTeacherid = (id) => (dispatch, getState) => {
   }
 
   axios
-    .get(`http://127.0.0.1:8000/api/teacher/${id}/`, config)
+    .get(
+      `https://intense-savannah-53065.herokuapp.com/api/teacher/${id}/`,
+      config
+    )
     .then((res) => {
       dispatch({
         type: CHECK_TEACHER,
@@ -92,7 +95,7 @@ export const allUsers = () => (dispatch, getState) => {
   }
 
   axios
-    .get("http://127.0.0.1:8000/api/all/", config)
+    .get("https://intense-savannah-53065.herokuapp.com/api/all/", config)
     .then((res) => {
       dispatch({
         type: CHECK,
@@ -123,7 +126,11 @@ export const login = (email, password) => (dispatch) => {
   const body = JSON.stringify({ email, password });
 
   axios
-    .post("http://127.0.0.1:8000/api/auth/login", body, config)
+    .post(
+      "https://intense-savannah-53065.herokuapp.com/api/auth/login",
+      body,
+      config
+    )
     .then((res) => {
       dispatch({
         type: LOGIN_SUCCESS,
@@ -149,7 +156,11 @@ export const register = (email, password) => (dispatch) => {
   const body = JSON.stringify({ email, password });
 
   axios
-    .post("http://127.0.0.1:8000/api/auth/register", body, config)
+    .post(
+      "https://intense-savannah-53065.herokuapp.com/api/auth/register",
+      body,
+      config
+    )
     .then((res) => {
       dispatch({
         type: REGISTER_SUCCESS,
@@ -182,7 +193,11 @@ export const addProfile = (deets) => (dispatch, getState) => {
   console.log(body);
 
   axios
-    .post("http://127.0.0.1:8000/api/student/", body, config)
+    .post(
+      "https://intense-savannah-53065.herokuapp.com/api/student/",
+      body,
+      config
+    )
     .then((res) => {
       dispatch({
         type: USER_DETAILS,
@@ -214,7 +229,7 @@ export const addProfile = (deets) => (dispatch, getState) => {
 //   console.log(body);
 
 //   axios
-//     .post("http://127.0.0.1:8000/api/teacher/", body, config)
+//     .post("https://intense-savannah-53065.herokuapp.com/api/teacher/", body, config)
 //     .then((res) => {
 //       dispatch({
 //         type: USER_DETAILS,
@@ -246,7 +261,11 @@ export const addTeacher = (deets) => (dispatch, getState) => {
   console.log(body);
 
   axios
-    .post("http://127.0.0.1:8000/api/teacher/", body, config)
+    .post(
+      "https://intense-savannah-53065.herokuapp.com/api/teacher/",
+      body,
+      config
+    )
     .then((res) => {
       dispatch({
         type: TEACHER_DETAILS,
@@ -277,7 +296,11 @@ export const logout = () => (dispatch, getState) => {
   }
 
   axios
-    .post("http://127.0.0.1:8000/api/auth/logout", null, config)
+    .post(
+      "https://intense-savannah-53065.herokuapp.com/api/auth/logout",
+      null,
+      config
+    )
     .then((res) => {
       dispatch({
         type: LOGOUT_SUCCESS,
