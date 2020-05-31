@@ -25,7 +25,7 @@ import { returnErrors } from "./messages";
 
 export const questions = () => (dispatch) => {
   axios
-    .get("http://127.0.0.1:8000/api/assignment/")
+    .get("https://intense-savannah-53065.herokuapp.com/api/assignment/")
     .then((res) => {
       dispatch({
         type: QUESTIONS,
@@ -39,7 +39,7 @@ export const questions = () => (dispatch) => {
 
 export const choices = () => (dispatch) => {
   axios
-    .get("http://127.0.0.1:8000/api/choice/")
+    .get("https://intense-savannah-53065.herokuapp.com/api/choice/")
     .then((res) => {
       dispatch({
         type: CHOICES,
@@ -63,7 +63,7 @@ export const get_all_score = () => (dispatch, getState) => {
     config.headers["Authorization"] = `Token ${token}`;
   }
   axios
-    .get(`http://127.0.0.1:8000/api/score/`, config)
+    .get(`https://intense-savannah-53065.herokuapp.com/api/score/`, config)
     .then((res) => {
       dispatch({
         type: GET_ALL_SCORE,
@@ -87,7 +87,7 @@ export const get_all_missions = () => (dispatch, getState) => {
     config.headers["Authorization"] = `Token ${token}`;
   }
   axios
-    .get(`http://127.0.0.1:8000/api/mission/`)
+    .get(`https://intense-savannah-53065.herokuapp.com/api/mission/`)
     .then((res) => {
       dispatch({
         type: GET_ALL_MISSIONS,
@@ -111,7 +111,7 @@ export const get_score = (id) => (dispatch, getState) => {
     config.headers["Authorization"] = `Token ${token}`;
   }
   axios
-    .get(`http://127.0.0.1:8000/api/score/${id}/`)
+    .get(`https://intense-savannah-53065.herokuapp.com/api/score/${id}/`)
     .then((res) => {
       dispatch({
         type: GET_SCORE,
@@ -142,7 +142,10 @@ export const finito = (score) => (dispatch, getState) => {
   }
 
   axios
-    .get(`http://127.0.0.1:8000/api/score/${score}/`, config)
+    .get(
+      `https://intense-savannah-53065.herokuapp.com/api/score/${score}/`,
+      config
+    )
     .then((res) => {
       dispatch({
         type: FINISH_QUIZ,
@@ -168,7 +171,11 @@ export const cruise = (ma) => (dispatch, getState) => {
   const body = JSON.stringify(ma);
 
   axios
-    .get(`http://127.0.0.1:8000/api/mission/`, body, config)
+    .get(
+      `https://intense-savannah-53065.herokuapp.com/api/mission/`,
+      body,
+      config
+    )
     .then((res) => {
       dispatch({
         type: MISSION_ACOMPLISHED,
@@ -219,7 +226,11 @@ export const setScore = (score) => (dispatch, getState) => {
   //GET BODY
   const body = JSON.stringify(score);
   axios
-    .post(`http://127.0.0.1:8000/api/score/`, body, config)
+    .post(
+      `https://intense-savannah-53065.herokuapp.com/api/score/`,
+      body,
+      config
+    )
     .then((res) => {
       dispatch({
         type: SETSCORE,

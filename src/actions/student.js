@@ -6,7 +6,7 @@ import { returnErrors } from "./messages";
 
 export const getstudents = () => (dispatch) => {
   axios
-    .get("http://127.0.0.1:8000/api/student/")
+    .get("https://intense-savannah-53065.herokuapp.com/api/student/")
     .then((res) => {
       dispatch({
         type: GET_STUDENTS,
@@ -31,7 +31,10 @@ export const getstudent = (id) => (dispatch, getState) => {
   }
 
   axios
-    .get(`http://127.0.0.1:8000/api/studentme/${id}/`, config)
+    .get(
+      `https://intense-savannah-53065.herokuapp.com/api/studentme/${id}/`,
+      config
+    )
     .then((res) => {
       dispatch({
         type: GET_STUDENT,
@@ -47,7 +50,7 @@ export const getstudent = (id) => (dispatch, getState) => {
 
 export const delstudents = (id) => (dispatch) => {
   axios
-    .delete(`http://127.0.0.1:8000/api/student/${id}/`)
+    .delete(`https://intense-savannah-53065.herokuapp.com/api/student/${id}/`)
     .then((res) => {
       dispatch({
         type: DEL_STUDENT,
@@ -62,7 +65,7 @@ export const delstudents = (id) => (dispatch) => {
 
 export const addstudent = (student) => (dispatch) => {
   axios
-    .post(`http://127.0.0.1:8000/api/student/`, student)
+    .post(`https://intense-savannah-53065.herokuapp.com/api/student/`, student)
     .then((res) => {
       dispatch({
         type: ADD_STUDENT,

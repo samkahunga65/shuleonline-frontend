@@ -12,7 +12,7 @@ import {
 
 export const getteachers = () => (dispatch) => {
   axios
-    .get("http://127.0.0.1:8000/api/teacher/")
+    .get("https://intense-savannah-53065.herokuapp.com/api/teacher/")
     .then((res) => {
       dispatch({
         type: GET_TEACHERS,
@@ -37,7 +37,10 @@ export const sStudents = (cls) => (dispatch, getState) => {
   //GET BODY
 
   axios
-    .get(`http://127.0.0.1:8000/api/studentcls/${cls}/`, config)
+    .get(
+      `https://intense-savannah-53065.herokuapp.com/api/studentcls/${cls}/`,
+      config
+    )
     .then((res) => {
       dispatch({
         type: LOAD_STUDENTS,
@@ -63,7 +66,11 @@ export const giveWork = (work) => (dispatch, getState) => {
   const body = JSON.stringify(work);
 
   axios
-    .post(`http://127.0.0.1:8000/api/assignment/`, body, config)
+    .post(
+      `https://intense-savannah-53065.herokuapp.com/api/assignment/`,
+      body,
+      config
+    )
     .then((res) => {
       dispatch({
         type: GIVE_WORK,
@@ -89,7 +96,11 @@ export const giveQuestion = (qst) => (dispatch, getState) => {
   const body = JSON.stringify(qst);
 
   axios
-    .post(`http://127.0.0.1:8000/api/question/`, body, config)
+    .post(
+      `https://intense-savannah-53065.herokuapp.com/api/question/`,
+      body,
+      config
+    )
     .then((res) => {
       dispatch({
         type: QUESTION,
@@ -115,7 +126,11 @@ export const giveChoices = (cs) => (dispatch, getState) => {
   const body = JSON.stringify(cs);
 
   axios
-    .post(`http://127.0.0.1:8000/api/choice/`, body, config)
+    .post(
+      `https://intense-savannah-53065.herokuapp.com/api/choice/`,
+      body,
+      config
+    )
     .then((res) => {
       dispatch({
         type: CHOICES,
@@ -141,7 +156,10 @@ export const Work = () => (dispatch, getState) => {
   //GET BODY
 
   axios
-    .get(`http://127.0.0.1:8000/api/allassignments/`, config)
+    .get(
+      `https://intense-savannah-53065.herokuapp.com/api/allassignments/`,
+      config
+    )
     .then((res) => {
       dispatch({
         type: CHECK_WORK,
