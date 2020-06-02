@@ -152,7 +152,12 @@ export class studentHome extends Component {
             <div className="notdone">
               {ass.map((as, index) => (
                 <div className="quiz">
-                  <h3 onClick={(e) => this.doAss(as.id, e)}>{as.title}</h3>
+                  <h3
+                    className="questions"
+                    onClick={(e) => this.doAss(as.id, e)}
+                  >
+                    {as.title}
+                  </h3>
                 </div>
               ))}
             </div>

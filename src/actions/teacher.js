@@ -12,7 +12,7 @@ import {
 
 export const getteachers = () => (dispatch) => {
   axios
-    .get("https://intense-savannah-53065.herokuapp.com/api/teacher/")
+    .get("https://lit-wildwood-46558.herokuapp.com/api/teacher/")
     .then((res) => {
       dispatch({
         type: GET_TEACHERS,
@@ -38,7 +38,7 @@ export const sStudents = (cls) => (dispatch, getState) => {
 
   axios
     .get(
-      `https://intense-savannah-53065.herokuapp.com/api/studentcls/${cls}/`,
+      `https://lit-wildwood-46558.herokuapp.com/api/studentcls/${cls}/`,
       config
     )
     .then((res) => {
@@ -67,7 +67,7 @@ export const giveWork = (work) => (dispatch, getState) => {
 
   axios
     .post(
-      `https://intense-savannah-53065.herokuapp.com/api/assignment/`,
+      `https://lit-wildwood-46558.herokuapp.com/api/assignment/`,
       body,
       config
     )
@@ -97,7 +97,7 @@ export const giveQuestion = (qst) => (dispatch, getState) => {
 
   axios
     .post(
-      `https://intense-savannah-53065.herokuapp.com/api/question/`,
+      `https://lit-wildwood-46558.herokuapp.com/api/question/`,
       body,
       config
     )
@@ -126,11 +126,7 @@ export const giveChoices = (cs) => (dispatch, getState) => {
   const body = JSON.stringify(cs);
 
   axios
-    .post(
-      `https://intense-savannah-53065.herokuapp.com/api/choice/`,
-      body,
-      config
-    )
+    .post(`https://lit-wildwood-46558.herokuapp.com/api/choice/`, body, config)
     .then((res) => {
       dispatch({
         type: CHOICES,
@@ -156,10 +152,7 @@ export const Work = () => (dispatch, getState) => {
   //GET BODY
 
   axios
-    .get(
-      `https://intense-savannah-53065.herokuapp.com/api/allassignments/`,
-      config
-    )
+    .get(`https://lit-wildwood-46558.herokuapp.com/api/allassignments/`, config)
     .then((res) => {
       dispatch({
         type: CHECK_WORK,

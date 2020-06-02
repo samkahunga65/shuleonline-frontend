@@ -33,7 +33,7 @@ export const loadUser = () => (dispatch, getState) => {
   }
 
   axios
-    .get("https://intense-savannah-53065.herokuapp.com/api/auth/user", config)
+    .get("https://lit-wildwood-46558.herokuapp.com/api/auth/user", config)
     .then((res) => {
       dispatch({
         type: USER_LOADED,
@@ -59,10 +59,7 @@ export const checkTeacherid = (id) => (dispatch, getState) => {
   }
 
   axios
-    .get(
-      `https://intense-savannah-53065.herokuapp.com/api/teacher/${id}/`,
-      config
-    )
+    .get(`https://lit-wildwood-46558.herokuapp.com/api/teacher/${id}/`, config)
     .then((res) => {
       dispatch({
         type: CHECK_TEACHER,
@@ -95,7 +92,7 @@ export const allUsers = () => (dispatch, getState) => {
   }
 
   axios
-    .get("https://intense-savannah-53065.herokuapp.com/api/all/", config)
+    .get("https://lit-wildwood-46558.herokuapp.com/api/all/", config)
     .then((res) => {
       dispatch({
         type: CHECK,
@@ -127,7 +124,7 @@ export const login = (email, password) => (dispatch) => {
 
   axios
     .post(
-      "https://intense-savannah-53065.herokuapp.com/api/auth/login",
+      "https://lit-wildwood-46558.herokuapp.com/api/auth/login",
       body,
       config
     )
@@ -157,7 +154,7 @@ export const register = (email, password) => (dispatch) => {
 
   axios
     .post(
-      "https://intense-savannah-53065.herokuapp.com/api/auth/register",
+      "https://lit-wildwood-46558.herokuapp.com/api/auth/register",
       body,
       config
     )
@@ -193,11 +190,7 @@ export const addProfile = (deets) => (dispatch, getState) => {
   console.log(body);
 
   axios
-    .post(
-      "https://intense-savannah-53065.herokuapp.com/api/student/",
-      body,
-      config
-    )
+    .post("https://lit-wildwood-46558.herokuapp.com/api/student/", body, config)
     .then((res) => {
       dispatch({
         type: USER_DETAILS,
@@ -229,7 +222,7 @@ export const addProfile = (deets) => (dispatch, getState) => {
 //   console.log(body);
 
 //   axios
-//     .post("https://intense-savannah-53065.herokuapp.com/api/teacher/", body, config)
+//     .post("https://lit-wildwood-46558.herokuapp.com/api/teacher/", body, config)
 //     .then((res) => {
 //       dispatch({
 //         type: USER_DETAILS,
@@ -261,11 +254,7 @@ export const addTeacher = (deets) => (dispatch, getState) => {
   console.log(body);
 
   axios
-    .post(
-      "https://intense-savannah-53065.herokuapp.com/api/teacher/",
-      body,
-      config
-    )
+    .post("https://lit-wildwood-46558.herokuapp.com/api/teacher/", body, config)
     .then((res) => {
       dispatch({
         type: TEACHER_DETAILS,
@@ -297,7 +286,7 @@ export const logout = () => (dispatch, getState) => {
 
   axios
     .post(
-      "https://intense-savannah-53065.herokuapp.com/api/auth/logout",
+      "https://lit-wildwood-46558.herokuapp.com/api/auth/logout",
       null,
       config
     )
