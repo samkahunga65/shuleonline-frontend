@@ -25,7 +25,9 @@ import { returnErrors } from "./messages";
 
 export const questions = () => (dispatch) => {
   axios
-    .get("https://intense-savannah-53065.herokuapp.com/api/assignment/")
+    .get(
+      "https://lit-wildwood-46558.herokuapp.com.herokuapp.com/api/assignment/"
+    )
     .then((res) => {
       dispatch({
         type: QUESTIONS,
@@ -39,7 +41,7 @@ export const questions = () => (dispatch) => {
 
 export const choices = () => (dispatch) => {
   axios
-    .get("https://intense-savannah-53065.herokuapp.com/api/choice/")
+    .get("https://lit-wildwood-46558.herokuapp.com.herokuapp.com/api/choice/")
     .then((res) => {
       dispatch({
         type: CHOICES,
@@ -63,7 +65,10 @@ export const get_all_score = () => (dispatch, getState) => {
     config.headers["Authorization"] = `Token ${token}`;
   }
   axios
-    .get(`https://intense-savannah-53065.herokuapp.com/api/score/`, config)
+    .get(
+      `https://lit-wildwood-46558.herokuapp.com.herokuapp.com/api/score/`,
+      config
+    )
     .then((res) => {
       dispatch({
         type: GET_ALL_SCORE,
@@ -87,7 +92,7 @@ export const get_all_missions = () => (dispatch, getState) => {
     config.headers["Authorization"] = `Token ${token}`;
   }
   axios
-    .get(`https://intense-savannah-53065.herokuapp.com/api/mission/`)
+    .get(`https://lit-wildwood-46558.herokuapp.com.herokuapp.com/api/mission/`)
     .then((res) => {
       dispatch({
         type: GET_ALL_MISSIONS,
@@ -111,7 +116,9 @@ export const get_score = (id) => (dispatch, getState) => {
     config.headers["Authorization"] = `Token ${token}`;
   }
   axios
-    .get(`https://intense-savannah-53065.herokuapp.com/api/score/${id}/`)
+    .get(
+      `https://lit-wildwood-46558.herokuapp.com.herokuapp.com/api/score/${id}/`
+    )
     .then((res) => {
       dispatch({
         type: GET_SCORE,
@@ -143,7 +150,7 @@ export const finito = (score) => (dispatch, getState) => {
 
   axios
     .get(
-      `https://intense-savannah-53065.herokuapp.com/api/score/${score}/`,
+      `https://lit-wildwood-46558.herokuapp.com.herokuapp.com/api/score/${score}/`,
       config
     )
     .then((res) => {
@@ -172,7 +179,7 @@ export const cruise = (ma) => (dispatch, getState) => {
 
   axios
     .get(
-      `https://intense-savannah-53065.herokuapp.com/api/mission/`,
+      `https://lit-wildwood-46558.herokuapp.com.herokuapp.com/api/mission/`,
       body,
       config
     )
@@ -227,7 +234,7 @@ export const setScore = (score) => (dispatch, getState) => {
   const body = JSON.stringify(score);
   axios
     .post(
-      `https://intense-savannah-53065.herokuapp.com/api/score/`,
+      `https://lit-wildwood-46558.herokuapp.com.herokuapp.com/api/score/`,
       body,
       config
     )
